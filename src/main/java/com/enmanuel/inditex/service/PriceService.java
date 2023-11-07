@@ -10,8 +10,6 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Scheduler;
-import reactor.core.scheduler.Schedulers;
 
 import java.time.LocalDateTime;
 
@@ -42,13 +40,13 @@ public class PriceService {
 
         Price price = new Price();
         price.setBrandId(1L);
-        price.setProductId(1L);
+        price.setProductId(35455L);
         price.setCurrency("EUR");
         price.setPriceList(1);
         price.setPrice(50.0);
         price.setPriority(1);
-        price.setStartDate(LocalDateTime.now());
-        price.setEndDate(LocalDateTime.now().plusWeeks(1));
+        price.setStartDate(LocalDateTime.parse("2023-11-07T20:00:00"));
+        price.setEndDate(LocalDateTime.parse("2023-11-27T20:00:00"));
         priceRepository.save(price).block();
     }
 }
