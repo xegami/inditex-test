@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class PriceControllerAcceptanceTests {
+public class PriceControllerIntegrationTests {
 
     private final PriceService priceService = mock(PriceService.class);
     private final PriceController priceController = new PriceController(priceService);
